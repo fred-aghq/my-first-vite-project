@@ -1,5 +1,8 @@
 <script setup>
-import { onMounted, ref } from "vue";
+import { ref } from "vue";
+import { useFlash } from "@/composables/useFlash";
+
+let { flash } = useFlash();
 
 let message = ref('Hello Vue 3 + Vite');
 
@@ -11,7 +14,7 @@ setTimeout(changeMessage, 2000);
 <template>
   <main>
     {{ message }}
+    <button @click="flash('hi!', 'This is the home page.')">Flash</button>
     <input v-model="message" />
-    <TheWelcome />
   </main>
 </template>
