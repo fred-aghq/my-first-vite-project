@@ -1,10 +1,10 @@
 <script setup>
 import TabbableTextarea from '@/components/TabbableTextarea.vue';
-import { counterStore } from '@/stores/counterStore';
+import { useCounterStore } from '@/stores/CounterStore';
 import { ref } from 'vue';
 
 let comment = ref('test value');
-const count = counterStore.count;
+const count = useCounterStore().count
 
 </script>
 
