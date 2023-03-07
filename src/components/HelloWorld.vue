@@ -1,10 +1,15 @@
 <script setup>
+import { inject } from 'vue';
+
 defineProps({
   msg: {
     type: String,
     required: true
   }
 })
+
+let foo = inject('foo');
+console.debug(foo);
 </script>
 
 <template>
