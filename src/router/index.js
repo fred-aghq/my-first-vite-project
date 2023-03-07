@@ -22,6 +22,11 @@ const router = createRouter({
       path: '/contact',
       name: 'contact',
       component: ContactView
+    },
+    {
+      path: '/composable-example',
+      name: 'composable-example',
+      component: () => import('../views/ComposableExampleView.vue')
     }
   ]
 })
