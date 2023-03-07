@@ -27,6 +27,16 @@ const router = createRouter({
       path: '/composable-example',
       name: 'composable-example',
       component: () => import('../views/ComposableExampleView.vue')
+    },
+    {
+      path: '/state-example',
+      name: 'state-example',
+      component: () => import('../views/StateView.vue')
+    },
+    {
+      path: '/counter',
+      name: 'counter',
+      component: () => import('../views/CounterView.vue')
     }
   ]
 })

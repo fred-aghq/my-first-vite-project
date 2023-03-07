@@ -1,9 +1,7 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from '@/components/HelloWorld.vue'
-import { provide } from 'vue';
 
-provide('foo', 'bar');
 </script>
 
 <template>
@@ -18,6 +16,8 @@ provide('foo', 'bar');
         <RouterLink to="/about">About</RouterLink>
         <RouterLink to="/contact">Contact</RouterLink>
         <RouterLink to="/composable-example">Composable Example</RouterLink>
+        <RouterLink to="/state-example">State Example</RouterLink>
+        <RouterLink to="/counter">Counter</RouterLink>
       </nav>
     </div>
   </header>

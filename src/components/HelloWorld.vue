@@ -1,5 +1,5 @@
 <script setup>
-import { inject } from 'vue';
+import { dataStore } from '@/stores/dataStore';
 
 defineProps({
   msg: {
@@ -7,18 +7,18 @@ defineProps({
     required: true
   }
 })
-
-let foo = inject('foo');
-console.debug(foo);
+let store = dataStore;
 </script>
 
 <template>
   <div class="greetings">
     <h1 class="green">{{ msg }}</h1>
     <h3>
-      You’ve successfully created a project with
-      <a href="https://vitejs.dev/" target="_blank" rel="noopener">Vite</a> +
-      <a href="https://vuejs.org/" target="_blank" rel="noopener">Vue 3</a>.
+        <ul>
+          <li v-for="(item, index) in store.data" :key="index">
+            {{ item }}
+          </li>
+        </ul>
     </h3>
   </div>
 </template>
