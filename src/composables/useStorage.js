@@ -29,7 +29,7 @@ export function useStorage(key, defaultVal = null) {
 
     const removeItem = () => localStorage.removeItem(key);
 
-    watch(val, write);
+    watch(val, write, { deep: true });
 
     return val;
 }
