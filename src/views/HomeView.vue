@@ -1,20 +1,14 @@
 <script setup>
-import { ref } from "vue";
-import { useFlash } from "@/composables/useFlash";
+import TabbableTextarea from '@/components/TabbableTextarea.vue';
+import { ref } from 'vue';
 
-let { flash } = useFlash();
-
-let message = ref('Hello Vue 3 + Vite');
-
-let changeMessage = () => message.value = 'I was changed';
-
-setTimeout(changeMessage, 2000);
+let comment = ref('test value');
 </script>
 
 <template>
   <main>
-    {{ message }}
-    <button @click="flash('hi!', 'This is the home page.')">Flash</button>
-    <input v-model="message" />
+    <form>
+      <TabbableTextarea v-model="comment" style="width:100%; height:300px;" />
+    </form>
   </main>
 </template>
